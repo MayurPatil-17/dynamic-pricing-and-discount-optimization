@@ -40,37 +40,6 @@ This project aims to:
 
 ---
 
-## 🗂️ Project Structure 
-
-📦 dynamic_pricing_optimization/
-├── 📁 data/
-│ ├── initial_data/
-│ │ └── data.csv
-│ ├── processed_data/
-│ │ ├── data_clean.csv # Cleaned dataset after Python preprocessing
-│ │ ├── sales_enriched.csv # SQL-enriched data with TotalSales, Discount, Profit
-│ │ └── cluster_sales_data.csv # Final clustered data from ML pipeline
-│
-├── 📁 sql/
-│ ├── schema.sql
-│ ├── data.sql
-│ ├── insert.sql
-│ ├── basic_measures.sql
-│ ├── basic_stats.sql
-│ ├── country_summary.sql
-│ ├── high_margin.sql
-│ ├── low_margin.sql
-│ ├── monthly_sales.sql
-│
-├── 📁 notebooks/
-│ └── retail_price.ipynb
-│
-├── 📁 dashboard/
-│ └── dynamic_pricing.pbix
-│
-├── requirements.txt
-└── README.md
-
 ## ⚙️ Workflow Summary  
 
 ### **1️⃣ Data Preparation (Python)**  
