@@ -113,8 +113,7 @@ Developed an **interactive 3-page Power BI dashboard** connected to SQL and CSV 
 ## 🚀 Results
 
 ✅ Identified **4 distinct pricing clusters** with unique discount–profit characteristics  
-✅ Achieved up to **15% improvement in profit margins** through optimized discounting  
-✅ Built an **automated data pipeline** from raw CSV → SQL → Power BI  
+✅ Built an **data pipeline** from raw CSV → SQL → Power BI  
 ✅ Delivered a **visually rich, decision-support dashboard** for pricing teams  
 
 ---
