@@ -97,8 +97,6 @@ Developed an **interactive 3-page Power BI dashboard** connected to SQL and CSV 
 - Highlighted **optimal discount ranges** by cluster  
 - Added **slicers** synced across all report pages  
 
-> 💡 *All report pages are interconnected — applying filters dynamically updates visuals across the dashboard.*
-
 ---
 
 ## 📈 Business KPIs
@@ -110,7 +108,6 @@ Developed an **interactive 3-page Power BI dashboard** connected to SQL and CSV 
 | 📊 **Profit Margin (%)** | Key profitability measure |
 | 📦 **Sales by Category / Region** | Identifies high-performing areas |
 | 👥 **Customer Value Segments** | Clustered segments based on spending and profit margin |
-| 🎯 **Optimal Discount Range** | 5–15% discount identified as most profitable |
 
 ---
 
