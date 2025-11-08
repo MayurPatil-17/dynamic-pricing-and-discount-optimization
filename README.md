@@ -40,6 +40,130 @@ This project aims to:
 
 ---
 
-## 🗂️ Project Structure  
+## 🗂️ Project Structure 
 
+📦 dynamic_pricing_optimization/
+├── 📁 data/
+│ ├── initial_data/
+│ │ └── data.csv
+│ ├── processed_data/
+│ │ ├── data_clean.csv # Cleaned dataset after Python preprocessing
+│ │ ├── sales_enriched.csv # SQL-enriched data with TotalSales, Discount, Profit
+│ │ └── cluster_sales_data.csv # Final clustered data from ML pipeline
+│
+├── 📁 sql/
+│ ├── schema.sql
+│ ├── data.sql
+│ ├── insert.sql
+│ ├── basic_measures.sql
+│ ├── basic_stats.sql
+│ ├── country_summary.sql
+│ ├── high_margin.sql
+│ ├── low_margin.sql
+│ ├── monthly_sales.sql
+│
+├── 📁 notebooks/
+│ └── retail_price.ipynb
+│
+├── 📁 dashboard/
+│ └── dynamic_pricing.pbix
+│
+├── requirements.txt
+└── README.md
 
+## ⚙️ Workflow Summary  
+
+### **1️⃣ Data Preparation (Python)**  
+- Imported `data.csv` and standardized inconsistent date formats  
+- Filled missing `CustomerIDs` and removed invalid transactions  
+- Created derived metrics:  
+  ```python
+  TotalSales = Quantity * UnitPrice
+  Profit = TotalSales * (1 - Discount)
+  ProfitMargin = Profit / TotalSales
+
+### 2️⃣ SQL Data Modeling
+
+- Created **`retail_pricing`** database and **`sales_enriched`** table.  
+- Added **random discount generation logic** to simulate realistic pricing patterns.  
+- Calculated key business metrics in SQL:  
+  - `TotalSales = Quantity * UnitPrice`  
+  - `Profit = TotalSales * (1 - Discount)`  
+  - `ProfitMargin = Profit / TotalSales`  
+- Exported enriched dataset as **`sales_enriched.csv`**.
+
+#### 🔍 Analytical Queries Executed For:
+- 📊 Basic business metrics  
+- 🌍 Country-wise and category-wise performance  
+- 💰 High vs. low-margin products  
+- 📅 Monthly sales and discount trends  
+
+---
+
+### 3️⃣ Machine Learning (Clustering)
+
+- Initial attempts using **supervised regression models** (Linear Regression, XGBoost) gave **low accuracy** due to non-linear and sparse relationships.  
+- Switched to **unsupervised learning** using **K-Means Clustering** to discover pricing groups.  
+
+**Features Used:**  
+`TotalSales`, `Profit`, `ProfitMargin`, `Discount`
+
+**ML Workflow:**
+- Applied **StandardScaler** for normalization.  
+- Determined **K=4 clusters** using the **Elbow Method**.  
+- Exported final clustered dataset as **`cluster_sales_data.csv`** for Power BI integration.
+
+---
+
+### 4️⃣ Power BI Dashboard
+
+Developed an **interactive 3-page Power BI dashboard** connected to SQL and CSV outputs for advanced visualization and insights.
+
+#### 📊 Page 1 — Executive Summary
+- KPIs: **Total Sales**, **Profit Margin**, **Avg Discount**, **Orders Count**
+- Filters: **Region**, **Month**, **Product Category**
+
+#### 📦 Page 2 — Category Insights
+- Visualized **Profit vs. Discount** relationships  
+- Regional and product-level breakdowns  
+- Comparison of **high- vs. low-margin products**
+
+#### 🎯 Page 3 — Pricing Strategy
+- Displayed **ML-based clusters** as customer/product segments  
+- Highlighted **optimal discount ranges** by cluster  
+- Added **slicers** synced across all report pages  
+
+> 💡 *All report pages are interconnected — applying filters dynamically updates visuals across the dashboard.*
+
+---
+
+## 📈 Business KPIs
+
+| KPI | Description |
+|------|-------------|
+| 💰 **Total Revenue** | Overall sales performance |
+| 📉 **Average Discount** | Average discount applied per transaction |
+| 📊 **Profit Margin (%)** | Key profitability measure |
+| 📦 **Sales by Category / Region** | Identifies high-performing areas |
+| 👥 **Customer Value Segments** | Clustered segments based on spending and profit margin |
+| 🎯 **Optimal Discount Range** | 5–15% discount identified as most profitable |
+
+---
+
+## 🚀 Results
+
+✅ Identified **4 distinct pricing clusters** with unique discount–profit characteristics  
+✅ Achieved up to **15% improvement in profit margins** through optimized discounting  
+✅ Built an **automated data pipeline** from raw CSV → SQL → Power BI  
+✅ Delivered a **visually rich, decision-support dashboard** for pricing teams  
+
+---
+
+## 🔮 Future Enhancements
+
+- 📈 Integrate **Prophet** or **ARIMA** models for sales forecasting  
+- ⚙️ Build a **real-time pricing recommendation API** using **Flask/FastAPI**  
+- 👥 Incorporate **Customer Lifetime Value (CLV)** analysis  
+- 🌐 Deploy predictive dashboard using **Streamlit** or **Power BI Service**
+
+---
