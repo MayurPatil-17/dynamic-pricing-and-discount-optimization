@@ -87,15 +87,14 @@ Developed an **interactive 3-page Power BI dashboard** connected to SQL and CSV 
 - KPIs: **Total Sales**, **Profit Margin**, **Avg Discount**, **Orders Count**
 - Filters: **Region**, **Month**, **Product Category**
 
-#### 📦 Page 2 — Category Insights
-- Visualized **Profit vs. Discount** relationships  
-- Regional and product-level breakdowns  
-- Comparison of **high- vs. low-margin products**
+#### 📦 Page 2 — Customer Insights
+- Visualized **Profit** vs. **Discount relationships** across customer segments
+- Analyzed top and low-value customers based on **sales** and **profit margin**
 
 #### 🎯 Page 3 — Pricing Strategy
-- Displayed **ML-based clusters** as customer/product segments  
-- Highlighted **optimal discount ranges** by cluster  
-- Added **slicers** synced across all report pages  
+- Highlighted optimal **discount** ranges by cluster
+- Visualized simulated **profit** outcomes under various pricing scenarios
+- Supported **what-if analysis** for different **discount levels** and customer groups
 
 ---
 
