@@ -45,11 +45,6 @@ This project aims to:
 ### **1️⃣ Data Preparation (Python)**  
 - Imported `data.csv` and standardized inconsistent date formats  
 - Filled missing `CustomerIDs` and removed invalid transactions  
-- Created derived metrics:  
-  ```python
-  TotalSales = Quantity * UnitPrice
-  Profit = TotalSales * (1 - Discount)
-  ProfitMargin = Profit / TotalSales
 
 ### 2️⃣ SQL Data Modeling
 
